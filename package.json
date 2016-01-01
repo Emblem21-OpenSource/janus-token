@@ -1,0 +1,25 @@
+{
+  "name": "janus-token",
+  "version": "1.0.0",
+  "description": "Stores REST resource identifiers and HTTP header data integrity score into JSON Web Tokens.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Emblem21/janus-token"
+  },
+  "author": "Emblem21",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emblem21/janus-token/issues"
+  },
+  "homepage": "https://github.com/Emblem21/janus-token",
+  "dependencies": {
+    "brain": "^0.7.0",
+    "fast-levenshtein": "^1.1.0",
+    "jsonwebtoken": "^5.5.0",
+    "uuid": "^2.0.1"
+  }
+}
