@@ -1,6 +1,6 @@
 {
   "name": "janus-token",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stores REST resource identifiers and HTTP header data integrity score into JSON Web Tokens.",
   "main": "index.js",
   "scripts": {

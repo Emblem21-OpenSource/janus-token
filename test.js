@@ -23,7 +23,7 @@ generator.create({
   acceptLanguage: 'en-US',
   referer: 'http://localhost',
   remoteAddress: '127.0.0.1'
-}, 'testResourceId', '1.0', function(token, resourceId) {
+}, 'testResourceId', {}, '1.0', function(token, resourceId) {
   // Confirm the token was made correctly
   assert.strictEqual(token.length > 330, true);
   assert.strictEqual(token.slice(0, 50), 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlma');

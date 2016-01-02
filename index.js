@@ -128,9 +128,13 @@ function TokenGenerator(trainingData, jwtSecret, jwtIssuer, jwtAudience, jwtAlgo
  * @param     error           Function    The callback to fire when the creation fails
  * ^argument  err             String      The error message
  */
-TokenGenerator.prototype.create = function(request, resourceId, version, done, error) {
+TokenGenerator.prototype.create = function(request, resourceId, properties, version, done, error) {
   var time = Date.now();
   var self = this;
+
+  if(!properties) {
+    properties = {};
+  }
 
   this.calculate(request, function(result) {
     // Generate pepper
@@ -144,10 +148,10 @@ TokenGenerator.prototype.create = function(request, resourceId, version, done, e
       rng: uuid.nodeRNG
     })).digest('hex');
 
-    done(createToken(resourceId, {
-      version: version,
-      integrity: result 
-    }, self.jwtConfig), resourceId);
+    properties.version = version;
+    properties.integrity = result;
+
+    done(createToken(resourceId, properties, self.jwtConfig), resourceId);
   }, error);
 };
 
